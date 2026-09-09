@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joel Jacob — Digital Marketer &amp; Content Strategist, Liverpool</title>
+<meta name="description" content="Joel Jacob is an SEO specialist and content strategist based in Liverpool. Technical audits, content strategy, and paid media that actually move numbers — including a live campaign for Maggie's Cancer Charity.">
+<meta property="og:title" content="Joel Jacob — Digital Marketer & Content Strategist">
+<meta property="og:description" content="SEO, content and growth work, told straight. Based in Liverpool.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#15181A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,ital@9..144,300..700,0..1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #15181A;
+    --ink-soft: #3B3F3D;
+    --paper: #E9E6DC;
+    --paper-alt: #DFDACB;
+    --surface: #FBFAF6;
+    --line: rgba(21,24,26,0.14);
+    --line-strong: rgba(21,24,26,0.28);
+    --amber: #D9932F;
+    --amber-soft: rgba(217,147,47,0.16);
+    --teal: #2C6B5A;
+    --teal-soft: rgba(44,107,90,0.14);
+    --indigo: #4C5AC4;
+    --indigo-soft: rgba(76,90,196,0.14);
+    --paper-on-ink: #EFE9D8;
+
+    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+
+    --max: 1180px;
+    --edge: clamp(20px, 5vw, 64px);
+    --radius: 3px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection{ background:var(--amber); color:var(--ink); }
+
+  a{ color:inherit; }
+  img,svg{ display:block; max-width:100%; }
+
+  a:focus-visible, button:focus-visible, [tabindex]:focus-visible{
+    outline: 2px solid var(--indigo);
+    outline-offset: 3px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--serif);
+    font-weight:500;
+    line-height:1.08;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  p{ margin:0; }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding-left:var(--edge);
+    padding-right:var(--edge);
+  }
+
+  .eyebrow{
+    font-family:var(--serif);
+    font-style:italic;
+    font-weight:400;
+    font-size:0.98rem;
+    color:var(--ink-soft);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--amber);
+    flex:none;
+  }
+
+  .btn{
+    font-family:var(--sans);
+    font-size:0.95rem;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    border-radius:999px;
+    border:1px solid var(--ink);
+    background:var(--ink);
+    color:var(--paper);
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn.ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--line-strong);
+  }
+  .btn.ghost:hover{ border-color:var(--ink); }
+  .btn.on-dark{
+    background:var(--paper-on-ink);
+    color:var(--ink);
+    border-color:var(--paper-on-ink);
+  }
+  .btn.on-dark.ghost{
+    background:transparent;
+    color:var(--paper-on-ink);
+    border-color:rgba(239,233,216,0.4);
+  }
+
+  section{ position:relative; }
+
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem, 4vw, 2.7rem);
+    margin-bottom:14px;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    max-width:52ch;
+  }
+
+  .kicker{
+    font-family:var(--sans);
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    color:var(--ink-soft);
+    text-transform:none;
+  }
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:100;
+    background:rgba(233,230,220,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color 0.25s ease, background 0.25s ease;
+  }
+  header.site-nav.scrolled{ border-bottom-color:var(--line); }
+  .nav-inner{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:18px var(--edge);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .nav-name{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    font-weight:600;
+    text-decoration:none;
+    color:var(--ink);
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0;
+    height:1px; background:var(--ink);
+    transform:scaleX(0); transform-origin:left;
+    transition:transform 0.2s ease;
+  }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+  .nav-cv{
+    font-size:0.85rem;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--line-strong);
+    padding:9px 18px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .nav-cv:hover{ border-color:var(--ink); }
+  .nav-toggle{ display:none; }
+
+  @media (max-width: 860px){
+    .nav-links{ display:none; }
+    .nav-toggle{
+      display:inline-flex;
+      align-items:center; justify-content:center;
+      width:38px; height:38px;
+      border:1px solid var(--line-strong);
+      border-radius:50%;
+      background:transparent;
+      cursor:pointer;
+    }
+    .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+      content:""; display:block; width:16px; height:1.5px; background:var(--ink);
+      position:relative; transition:transform 0.2s ease, opacity 0.2s ease;
+    }
+    .nav-toggle span::before{ position:absolute; top:-5px; }
+    .nav-toggle span::after{ position:absolute; top:5px; }
+    .mobile-menu{
+      position:fixed; inset:0; top:0;
+      background:var(--ink);
+      color:var(--paper-on-ink);
+      z-index:99;
+      display:flex; flex-direction:column;
+      justify-content:center;
+      padding:0 var(--edge);
+      transform:translateY(-100%);
+      transition:transform 0.35s ease;
+    }
+    .mobile-menu.open{ transform:translateY(0); }
+    .mobile-menu ul{ list-style:none; margin:0; padding:0; }
+    .mobile-menu a{
+      display:block;
+      font-family:var(--serif);
+      font-size:2.2rem;
+      text-decoration:none;
+      color:var(--paper-on-ink);
+      padding:14px 0;
+      border-bottom:1px solid rgba(239,233,216,0.15);
+    }
+    .mobile-close{
+      position:absolute; top:20px; right:var(--edge);
+      background:none; border:none; color:var(--paper-on-ink);
+      font-size:1rem; cursor:pointer; font-family:var(--sans);
+    }
+  }
+  @media (min-width: 861px){ .mobile-menu{ display:none; } }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:168px var(--edge) 90px;
+    max-width:var(--max);
+    margin:0 auto;
+    position:relative;
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap:40px;
+    align-items:center;
+    min-height:88vh;
+  }
+  .hero-copy{ position:relative; z-index:3; }
+  .hero h1{
+    font-size:clamp(2.5rem, 5.6vw, 4.4rem);
+    max-width:14ch;
+  }
+  .hero h1 em{ font-style:italic; color:var(--teal); }
+  .hero-sub{
+    margin-top:26px;
+    font-size:1.12rem;
+    color:var(--ink-soft);
+    max-width:46ch;
+  }
+  .hero-ctas{
+    margin-top:36px;
+    display:flex;
+    align-items:center;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .hero-ctas .text-link{
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:4px;
+    text-decoration-color:var(--line-strong);
+  }
+
+  .hero-visual{
+    position:relative;
+    height:440px;
+    z-index:1;
+  }
+  .hero-blob{
+    position:absolute;
+    inset:0;
+    border-radius:50%;
+    background:
+      radial-gradient(circle at 32% 28%, rgba(217,147,47,0.55), transparent 55%),
+      radial-gradient(circle at 68% 70%, rgba(44,107,90,0.5), transparent 55%),
+      radial-gradient(circle at 50% 50%, rgba(76,90,196,0.28), transparent 60%);
+    filter: blur(6px);
+    opacity:0.9;
+  }
+  #hero-canvas{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+  }
+
+  .hero-frag{
+    position:absolute;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:10px 14px;
+    font-size:0.78rem;
+    box-shadow:0 10px 24px rgba(21,24,26,0.08);
+    z-index:4;
+  }
+  .hero-frag .num{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    display:block;
+    color:var(--ink);
+  }
+  .hero-frag .lbl{ color:var(--ink-soft); }
+  .frag-a{ top:2%; right:8%; }
+  .frag-b{ bottom:14%; left:-4%; }
+  .frag-c{ bottom:0%; right:18%; }
+
+  @media (max-width: 980px){
+    .hero{ grid-template-columns:1fr; padding-top:130px; min-height:auto; }
+    .hero-visual{ height:280px; order:-1; }
+    .hero-frag{ display:none; }
+  }
+
+  /* ---------- ABOUT / WHAT I DO ---------- */
+  .about{
+    padding:110px 0 100px;
+    border-top:1px solid var(--line);
+  }
+  .about-intro{
+    max-width:640px;
+    margin-bottom:70px;
+  }
+  .about-intro h2{ font-size:clamp(1.9rem, 4vw, 2.7rem); margin-bottom:16px; }
+  .about-intro p{ color:var(--ink-soft); font-size:1.05rem; max-width:54ch; }
+
+  .do-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    border-top:1px solid var(--line);
+  }
+  .do-col{
+    padding:32px 26px 32px 0;
+    border-right:1px solid var(--line);
+  }
+  .do-col:last-child{ border-right:none; }
+  .do-col .do-label{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.35rem;
+    margin-bottom:18px;
+    color:var(--ink);
+  }
+  .do-col ul{ list-style:none; margin:0; padding:0; }
+  .do-col li{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:9px 0;
+    border-top:1px solid var(--line);
+  }
+  .do-col li:first-child{ border-top:none; }
+
+  @media (max-width: 900px){
+    .do-grid{ grid-template-columns:1fr 1fr; }
+    .do-col{ border-right:1px solid var(--line); padding:26px 20px 26px 0; }
+    .do-col:nth-child(2){ border-right:none; }
+    .do-col:nth-child(odd){ border-right:1px solid var(--line); }
+  }
+  @media (max-width: 560px){
+    .do-grid{ grid-template-columns:1fr; }
+    .do-col{ border-right:none !important; border-bottom:1px solid var(--line); }
+  }
+
+  /* ---------- WORK ---------- */
+  .work-head{
+    padding:110px 0 60px;
+    border-top:1px solid var(--line);
+  }
+
+  .case{ position:relative; }
+  .case-inner{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:80px var(--edge);
+  }
+  .case-tag{
+    display:inline-block;
+    font-size:0.78rem;
+    font-weight:600;
+    padding:5px 12px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .case-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:56px;
+    align-items:start;
+  }
+  .case h3{
+    font-size:clamp(1.7rem, 3.4vw, 2.5rem);
+    margin-bottom:18px;
+  }
+  .case-block{ margin-bottom:26px; }
+  .case-block .k{
+    font-size:0.78rem;
+    font-weight:600;
+    letter-spacing:0.02em;
+    margin-bottom:6px;
+    display:block;
+  }
+  .case-block p{ font-size:0.98rem; line-height:1.6; }
+  .case-role{
+    font-size:0.88rem;
+    opacity:0.75;
+    margin-top:6px;
+  }
+
+  .stat-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1px;
+    margin-top:6px;
+  }
+  .stat{
+    padding:20px 18px;
+  }
+  .stat .n{
+    font-family:var(--serif);
+    font-size:clamp(1.6rem, 3vw, 2.1rem);
+    display:block;
+    line-height:1;
+  }
+  .stat .l{
+    font-size:0.78rem;
+    margin-top:8px;
+    display:block;
+    opacity:0.8;
+  }
+
+  @media (max-width: 860px){
+    .case-grid{ grid-template-columns:1fr; gap:34px; }
+    .case-inner{ padding:60px var(--edge); }
+  }
+
+  /* Maggie's — dark, flagship */
+  .case--maggies{ background:var(--ink); color:var(--paper-on-ink); }
+  .case--maggies .case-tag{ background:rgba(217,147,47,0.22); color:var(--amber); }
+  .case--maggies .case-block .k{ color:var(--amber); }
+  .case--maggies .stat-grid{ background:rgba(239,233,216,0.14); border:1px solid rgba(239,233,216,0.14); }
+  .case--maggies .stat{ background:var(--ink); }
+  .case--maggies .stat .n{ color:var(--paper-on-ink); }
+  .case--maggies .stat .l{ color:rgba(239,233,216,0.65); }
+  .case--maggies .case-role{ opacity:0.6; }
+  .case--maggies p{ color:rgba(239,233,216,0.82); }
+
+  .audit-toggle{
+    margin-top:30px;
+    border:1px solid rgba(239,233,216,0.3);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .audit-btn{
+    width:100%;
+    background:transparent;
+    border:none;
+    color:var(--paper-on-ink);
+    font-family:var(--sans);
+    font-size:0.92rem;
+    font-weight:600;
+    padding:16px 18px;
+    text-align:left;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .audit-btn .plus{ transition:transform 0.2s ease; }
+  .audit-btn[aria-expanded="true"] .plus{ transform:rotate(45deg); }
+  .audit-panel{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.35s ease;
+  }
+  .audit-panel-inner{
+    padding:0 18px 20px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:18px;
+  }
+  .audit-item .n{ font-family:var(--serif); font-size:1.5rem; color:var(--amber); }
+  .audit-item .l{ font-size:0.78rem; color:rgba(239,233,216,0.65); margin-top:4px; }
+  @media (max-width:600px){ .audit-panel-inner{ grid-template-columns:1fr 1fr; } }
+
+  /* Ethinos — light, step diagram */
+  .case--ethinos{ background:var(--surface); }
+  .case--ethinos .case-tag{ background:var(--teal-soft); color:var(--teal); }
+  .case--ethinos .case-block .k{ color:var(--teal); }
+  .case--ethinos .stat{ background:var(--paper); }
+  .case--ethinos .stat .n{ color:var(--ink); }
+  .case--ethinos .stat .l{ color:var(--ink-soft); }
+  .case--ethinos p{ color:var(--ink-soft); }
+
+  .step-flow{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+    margin:24px 0 30px;
+  }
+  .step-flow .step{
+    font-size:0.82rem;
+    font-weight:600;
+    padding:7px 14px;
+    border-radius:999px;
+    border:1px solid var(--line-strong);
+    color:var(--ink-soft);
+  }
+  .step-flow .step.now{ background:var(--teal); border-color:var(--teal); color:#fff; }
+  .step-flow .arrow{ color:var(--ink-soft); font-size:0.85rem; }
+
+  .chapter{
+    border-top:1px solid var(--line);
+    padding-top:20px;
+    margin-top:20px;
+  }
+  .chapter .role-title{ font-weight:600; font-size:1rem; }
+  .chapter .role-dates{ font-size:0.82rem; color:var(--ink-soft); margin-bottom:10px; }
+
+  /* Famous Fashion — small nostalgic panel */
+  .case--fashion{ background:var(--paper-alt); }
+  .case--fashion .case-inner{ padding:70px var(--edge); }
+  .case--fashion .case-tag{ background:var(--indigo-soft); color:var(--indigo); }
+  .case--fashion .case-block .k{ color:var(--indigo); }
+  .case--fashion p{ color:var(--ink-soft); }
+  .case--fashion .stat .n{ color:var(--ink); }
+  .case--fashion .stat .l{ color:var(--ink-soft); }
+  .case--fashion .stat{ background:var(--paper); }
+  .fashion-grid{ grid-template-columns: 1.3fr 0.7fr; }
+  @media (max-width:860px){ .fashion-grid{ grid-template-columns:1fr; } }
+
+  /* Freelance — thin wide banner */
+  .case--freelance{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .case--freelance .case-inner{
+    padding:56px var(--edge);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+  .freelance-copy{ max-width:520px; }
+  .freelance-copy .case-tag{ background:var(--amber-soft); color:var(--amber); }
+  .freelance-copy h3{ font-size:clamp(1.4rem, 2.6vw, 1.9rem); margin-bottom:10px; }
+  .freelance-copy p{ color:var(--ink-soft); font-size:0.98rem; }
+  .freelance-stats{ display:flex; gap:34px; flex-wrap:wrap; }
+  .freelance-stats .stat{ padding:0; text-align:left; }
+  .freelance-stats .stat .n{ color:var(--ink); }
+  .freelance-stats .stat .l{ color:var(--ink-soft); }
+
+  /* ---------- SEO ---------- */
+  .seo{
+    padding:110px 0;
+    border-top:1px solid var(--line);
+  }
+  .checklist{
+    border-top:1px solid var(--line);
+    max-width:800px;
+  }
+  .check-item{
+    border-bottom:1px solid var(--line);
+  }
+  .check-btn{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    background:none;
+    border:none;
+    text-align:left;
+    padding:22px 0;
+    cursor:pointer;
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--ink);
+  }
+  .check-btn .idx{
+    font-family:var(--sans);
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-right:16px;
+  }
+  .check-btn .plus{ font-family:var(--sans); font-size:1.1rem; transition:transform 0.2s ease; flex:none; }
+  .check-btn[aria-expanded="true"] .plus{ transform:rotate(45deg); }
+  .check-panel{ max-height:0; overflow:hidden; transition:max-height 0.3s ease; }
+  .check-panel p{
+    padding:0 0 22px 40px;
+    max-width:56ch;
+    color:var(--ink-soft);
+    font-size:0.98rem;
+  }
+
+  /* ---------- TOOLBOX ---------- */
+  .toolbox{
+    padding:110px 0;
+    border-top:1px solid var(--line);
+    background:var(--surface);
+  }
+  .tool-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .tool-card{
+    background:var(--surface);
+    padding:24px 20px;
+    cursor:pointer;
+    min-height:140px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    text-align:left;
+    border:none;
+    font-family:var(--sans);
+  }
+  .tool-card .tool-name{
+    font-family:var(--serif);
+    font-size:1.15rem;
+    color:var(--ink);
+  }
+  .tool-card .tool-use{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+    margin-top:12px;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.25s ease;
+  }
+  .tool-card.open .tool-use{ max-height:120px; }
+  .tool-card .tool-tap{
+    font-size:0.74rem;
+    color:var(--ink-soft);
+    opacity:0.6;
+  }
+  .tool-card.open .tool-tap{ display:none; }
+  @media (max-width:900px){ .tool-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:520px){ .tool-grid{ grid-template-columns:1fr; } }
+
+  /* ---------- TIMELINE ---------- */
+  .timeline{
+    padding:110px 0;
+    border-top:1px solid var(--line);
+  }
+  .tl-list{
+    max-width:760px;
+    border-top:1px solid var(--line);
+  }
+  .tl-item{
+    display:grid;
+    grid-template-columns:160px 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .tl-date{
+    font-size:0.86rem;
+    color:var(--ink-soft);
+    padding-top:3px;
+  }
+  .tl-title{ font-family:var(--serif); font-size:1.15rem; margin-bottom:6px; }
+  .tl-desc{ font-size:0.92rem; color:var(--ink-soft); max-width:48ch; }
+  .tl-item.now .tl-title{ color:var(--teal); }
+  @media (max-width:560px){
+    .tl-item{ grid-template-columns:1fr; gap:6px; }
+  }
+
+  /* ---------- LAB ---------- */
+  .lab{
+    padding:110px 0;
+    border-top:1px solid var(--line);
+    background:var(--ink);
+    color:var(--paper-on-ink);
+  }
+  .lab .eyebrow{ color:rgba(239,233,216,0.7); }
+  .lab .eyebrow::before{ background:var(--amber); }
+  .lab-intro p{ color:rgba(239,233,216,0.75); max-width:52ch; }
+  .lab-card{
+    margin-top:50px;
+    border:1px solid rgba(239,233,216,0.22);
+    border-radius:var(--radius);
+    padding:32px;
+    max-width:640px;
+  }
+  .lab-card .k{ font-size:0.78rem; color:var(--amber); font-weight:600; }
+  .lab-card h3{ font-family:var(--serif); font-size:1.4rem; margin:10px 0 12px; color:var(--paper-on-ink); }
+  .lab-card p{ color:rgba(239,233,216,0.75); font-size:0.96rem; max-width:52ch; }
+
+  /* ---------- THOUGHTS ---------- */
+  .thoughts{
+    padding:90px 0;
+    border-top:1px solid rgba(239,233,216,0.15);
+    background:var(--ink);
+    color:var(--paper-on-ink);
+  }
+  .thoughts-box{
+    border:1px dashed rgba(239,233,216,0.3);
+    border-radius:var(--radius);
+    padding:36px;
+    max-width:640px;
+  }
+  .thoughts-box h3{ font-family:var(--serif); font-size:1.3rem; color:var(--paper-on-ink); margin-bottom:10px; }
+  .thoughts-box p{ color:rgba(239,233,216,0.7); font-size:0.95rem; }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    padding:130px 0 90px;
+    text-align:center;
+  }
+  .contact h2{
+    font-size:clamp(2.2rem, 6vw, 4rem);
+  }
+  .contact .sub{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.4rem;
+    color:var(--ink-soft);
+    margin-top:8px;
+  }
+  .contact-links{
+    margin-top:44px;
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px var(--edge);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    flex-wrap:wrap;
+    gap:10px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-name" href="#top">Joel Jacob</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#seo">SEO</a></li>
+        <li><a href="#toolbox">Toolbox</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#lab">Lab</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cv" href="Joel-Jacob-CV.pdf" target="_blank" rel="noopener">View CV</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">Close ✕</button>
+  <ul>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#seo">SEO</a></li>
+    <li><a href="#toolbox">Toolbox</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#lab">Lab</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="Joel-Jacob-CV.pdf" target="_blank" rel="noopener">View CV</a></li>
+  </ul>
+</div>
+
+<main id="top">
+<section class="hero" aria-label="Introduction">
+  <div class="hero-copy">
+    <p class="eyebrow" id="heroEyebrow">Liverpool, UK</p>
+    <h1 id="heroHeadline">I build things worth <em>finding</em> —<br>then make sure they get found.</h1>
+    <p class="hero-sub">SEO specialist and content strategist. Three years of turning crawl reports into growth and briefs into content people actually read — most recently on a live campaign for a UK cancer charity.</p>
+    <div class="hero-ctas">
+      <a href="#work" class="btn">See the work</a>
+      <a href="#contact" class="text-link">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="hero-blob"></div>
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-frag frag-a"><span class="num">40%</span><span class="lbl">organic traffic growth</span></div>
+    <div class="hero-frag frag-b"><span class="num">326,510</span><span class="lbl">campaign impressions</span></div>
+    <div class="hero-frag frag-c"><span class="num">6.47%</span><span class="lbl">Google Ads CTR</span></div>
+  </div>
+</section>
+
+<section class="about" aria-label="What I do" id="about">
+  <div class="wrap">
+    <div class="about-intro">
+      <p class="eyebrow">So, what do I actually do?</p>
+      <h2>Ask three different people and I'd get three different answers.</h2>
+      <p>All of them would be right. I've spent three years moving between the creative brief and the crawl report, which means I'm equally comfortable writing a caption and reading a Search Console query table.</p>
+    </div>
+
+    <div class="do-grid">
+      <div class="do-col">
+        <p class="do-label">I think</p>
+        <ul>
+          <li>Campaign strategy (SOSTAC, AIDA)</li>
+          <li>Audience segmentation</li>
+          <li>Search intent mapping</li>
+          <li>Competitive &amp; content-gap analysis</li>
+        </ul>
+      </div>
+      <div class="do-col">
+        <p class="do-label">I make</p>
+        <ul>
+          <li>Content calendars</li>
+          <li>On-page content &amp; copy</li>
+          <li>Seasonal campaigns, digital + print</li>
+          <li>Social content that fits the platform</li>
+        </ul>
+      </div>
+      <div class="do-col">
+        <p class="do-label">I grow</p>
+        <ul>
+          <li>Technical SEO &amp; site audits</li>
+          <li>Keyword research &amp; link building</li>
+          <li>Google Ads &amp; Meta Ads</li>
+          <li>Schema &amp; structured data</li>
+        </ul>
+      </div>
+      <div class="do-col">
+        <p class="do-label">I measure</p>
+        <ul>
+          <li>GA4 &amp; Search Console</li>
+          <li>Ahrefs, SEMrush, Similarweb</li>
+          <li>Core Web Vitals</li>
+          <li>KPI &amp; Balanced Scorecard reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" aria-label="Selected work">
+  <div class="work-head wrap">
+    <div class="about-intro" style="margin-bottom:0;">
+      <p class="eyebrow">The work</p>
+      <h2>Four projects. Four different jobs.</h2>
+      <p>Real strategy, real numbers, no filler clients. Each one taught me something different about the gap between a plan and what actually happens when it goes live.</p>
+    </div>
+  </div>
+
+  <!-- MAGGIE'S CANCER CHARITY -->
+  <article class="case case--maggies" id="case-maggies">
+    <div class="case-inner">
+      <span class="case-tag">Live client brief — MSc Digital Marketing, LJMU</span>
+      <div class="case-grid">
+        <div>
+          <h3>£2,000. 326,510 impressions.<br>Let's talk about what happened.</h3>
+          <div class="case-block">
+            <span class="k">The brief</span>
+            <p>Maggie's Wirral needed a 12-month, £40,000 campaign strategy — plus proof it would actually work. So the brief included a real £2,000 paid media pilot to test the thinking before anyone committed the full budget.</p>
+          </div>
+          <div class="case-block">
+            <span class="k">The thinking</span>
+            <p>I segmented the audience three ways — demographic (25–65), psychographic (VALS), behavioural — and built a SOSTAC-structured plan against SMART objectives: 60% traffic uplift, 5% Meta CTR, CPC under £1.50, 30% donation increase.</p>
+          </div>
+          <div class="case-block">
+            <span class="k">The idea</span>
+            <p>Build tightly themed ad groups around informational search intent rather than generic charity terms, and run a SEMrush keyword gap analysis against Macmillan Cancer Support and cancersupportuk.org to find the openings they'd missed.</p>
+          </div>
+          <div class="case-block">
+            <span class="k">My role</span>
+            <p>Digital Marketing Campaign Strategist. I planned, built and ran the pilot, audited the site, and put together the KPI framework the full campaign would report against.</p>
+          </div>
+          <div class="case-block">
+            <span class="k">What I learned</span>
+            <p>A tiny budget forces honesty. £2,000 doesn't leave room for a campaign that just looks good on a slide — every ad group had to earn its spend, which is a better lesson than any case study with a bigger number attached.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="stat-grid" id="maggiesStats">
+            <div class="stat"><span class="n" data-count="326510">0</span><span class="l">total impressions</span></div>
+            <div class="stat"><span class="n" data-count="776">0</span><span class="l">clicks driven</span></div>
+            <div class="stat"><span class="n" data-count="6.47" data-suffix="%">0%</span><span class="l">campaign CTR (9.77% peak)</span></div>
+            <div class="stat"><span class="n" data-count="0.54" data-prefix="£" data-decimals="2">£0</span><span class="l">average CPC</span></div>
+          </div>
+
+          <div class="audit-toggle">
+            <button class="audit-btn" id="auditBtn" aria-expanded="false" aria-controls="auditPanel">
+              <span>What the site audit found</span>
+              <span class="plus">+</span>
+            </button>
+            <div class="audit-panel" id="auditPanel">
+              <div class="audit-panel-inner">
+                <div class="audit-item"><span class="n">29<span style="font-size:0.9rem;">/100</span></span><span class="l">mobile PageSpeed score</span></div>
+                <div class="audit-item"><span class="n">44.66%</span><span class="l">bounce rate</span></div>
+                <div class="audit-item"><span class="n">74%</span><span class="l">traffic from branded search</span></div>
+                <div class="audit-item"><span class="n">1,197</span><span class="l">keyword opportunities found</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ETHINOS -->
+  <article class="case case--ethinos" id="case-ethinos">
+    <div class="case-inner">
+      <span class="case-tag">Ethinos Digital Marketing — Sep 2022 to Jul 2024</span>
+      <div class="case-grid">
+        <div>
+          <h3>From posting content to ranking for it.</h3>
+          <p style="margin-bottom:22px;">I started on the social side and moved into SEO within the same agency — which meant the audience research I did in year one directly shaped the content strategy I built in year two.</p>
+          <div class="step-flow" aria-hidden="true">
+            <span class="step">Content</span><span class="arrow">→</span>
+            <span class="step">Audience</span><span class="arrow">→</span>
+            <span class="step">Search</span><span class="arrow">→</span>
+            <span class="step">Data</span><span class="arrow">→</span>
+            <span class="step now">Growth</span>
+          </div>
+
+          <div class="chapter">
+            <p class="role-title">Social Media &amp; Content Executive</p>
+            <p class="role-dates">Sep 2022 – Jan 2023</p>
+            <p>Built content calendars around actual audience behaviour and platform signals, redesigned the moderation workflow, and ran competitive content-gap analysis in SEMrush to reshape the quarterly content strategy.</p>
+          </div>
+          <div class="chapter">
+            <p class="role-title">SEO &amp; Growth Analyst</p>
+            <p class="role-dates">Jan 2023 – Jul 2024</p>
+            <p>Ran full technical audits in Screaming Frog across seven client sites — crawl errors, redirect chains, internal linking — then backed it up with Ahrefs keyword gap analysis, schema markup, and monthly Core Web Vitals reporting.</p>
+          </div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat"><span class="n" data-count="40" data-suffix="%">0%</span><span class="l">organic traffic growth, 7 client sites</span></div>
+          <div class="stat"><span class="n" data-count="55" data-suffix="%">0%</span><span class="l">increase in rich-result appearances</span></div>
+          <div class="stat"><span class="n" data-count="45" data-suffix="%">0%</span><span class="l">increase in organic reach</span></div>
+          <div class="stat"><span class="n" data-count="25" data-suffix="%">0%</span><span class="l">increase in social engagement</span></div>
+          <div class="stat"><span class="n" data-count="30" data-suffix="%">0%</span><span class="l">faster community response time</span></div>
+          <div class="stat"><span class="n" data-count="5" data-prefix="2–" data-suffix="%">2–0%</span><span class="l">CTR lift on tracked landing pages</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- FAMOUS FASHION -->
+  <article class="case case--fashion" id="case-fashion">
+    <div class="case-inner">
+      <span class="case-tag">Famous Fashion Pvt. Ltd. — Oct 2020 to Jan 2021</span>
+      <div class="case-grid fashion-grid">
+        <div>
+          <h3>Where it actually started.</h3>
+          <p>My first proper digital marketing role, and the one where I learned that a content calendar is only as good as the testing behind it. I overhauled the posting schedule, introduced A/B format testing, and aligned publish times to when the audience actually showed up — then ran integrated seasonal campaigns across digital and print without losing the brand's voice between the two.</p>
+        </div>
+        <div class="stat-grid" style="grid-template-columns:1fr;">
+          <div class="stat"><span class="n" data-count="75" data-suffix="%">0%</span><span class="l">social engagement growth in under 3 months</span></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- FREELANCE -->
+  <article class="case case--freelance" id="case-freelance">
+    <div class="case-inner">
+      <div class="freelance-copy">
+        <span class="case-tag">Freelance SEO &amp; Content Strategist — 2018 to present</span>
+        <h3>The one that never stopped.</h3>
+        <p>Running alongside every job on this page: 3–5 client accounts at a time, managed end-to-end, on the side.</p>
+      </div>
+      <div class="freelance-stats">
+        <div class="stat"><span class="n" data-count="50" data-suffix="%">0%</span><span class="l">average engagement improvement</span></div>
+        <div class="stat"><span class="n" data-count="5" data-prefix="3–">0</span><span class="l">concurrent client accounts</span></div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="seo" id="seo" aria-label="SEO approach">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Also, I really like search engines</p>
+      <h2>What I'm actually checking</h2>
+      <p>Not a generic audit template — this is the sequence I actually work through, built from what's caught real problems on real sites.</p>
+    </div>
+
+    <div class="checklist" id="checklist">
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">01</span>Technical crawl health</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Full Screaming Frog crawl first — crawl errors, broken redirect chains, orphaned pages. This is where the biggest wins usually hide, and where a 29/100 mobile PageSpeed score gets found before anyone else notices.</p></div>
+      </div>
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">02</span>Keyword &amp; search intent mapping</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Ahrefs and SEMrush gap analysis against real competitors, not vanity keywords — mapping what's found to commercial versus informational intent so content gets built for what people actually want when they land.</p></div>
+      </div>
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">03</span>On-page &amp; meta optimisation</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Rewriting title tags and meta descriptions using actual Search Console impression and CTR data — not guesswork. This alone lifted CTR by 2–5% across tracked landing pages at Ethinos.</p></div>
+      </div>
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">04</span>Internal linking &amp; architecture</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Restructuring how pages link to each other so authority flows to the pages that actually need to rank, instead of getting stuck on the homepage.</p></div>
+      </div>
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">05</span>Schema &amp; structured data</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Article, FAQ and BreadcrumbList markup, implemented properly — contributed to a 55% increase in rich-result appearances on client sites.</p></div>
+      </div>
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">06</span>Backlinks &amp; authority</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Identifying genuine high-authority link opportunities via Ahrefs and coordinating outreach — slow work, but it's the difference that actually moves domain rating.</p></div>
+      </div>
+      <div class="check-item">
+        <button class="check-btn" aria-expanded="false"><span><span class="idx">07</span>Reporting that means something</span><span class="plus">+</span></button>
+        <div class="check-panel"><p>Monthly reporting on Core Web Vitals, ranking movement and traffic trends via GA4 and Search Console — built so a client can actually prioritise the next investment, not just admire a graph.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="toolbox" id="toolbox" aria-label="Tools">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What's actually in the toolkit</p>
+      <h2>Tap a tool</h2>
+      <p>No logo wall. Here's what each one is actually for, in practice.</p>
+    </div>
+
+    <div class="tool-grid" id="toolGrid">
+      <button class="tool-card"><span class="tool-name">Screaming Frog</span><span class="tool-use">Full-site crawl audits — broken links, redirect chains, crawl errors.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Ahrefs</span><span class="tool-use">Keyword gap analysis, backlink opportunities, rank tracking.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">SEMrush</span><span class="tool-use">Competitor content-gap analysis and keyword opportunity mapping.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Search Console</span><span class="tool-use">Query-level impression and CTR data that actually informs meta rewrites.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">GA4</span><span class="tool-use">Traffic, behaviour and conversion reporting.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Similarweb</span><span class="tool-use">Competitive benchmarking and traffic audits.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Google Ads</span><span class="tool-use">PPC campaign build and optimisation — the Maggie's pilot ran through here.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Meta Ads Manager</span><span class="tool-use">Paid social campaigns and audience targeting.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Canva</span><span class="tool-use">Fast-turnaround creative for social and campaign assets.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">Adobe Suite</span><span class="tool-use">Design and content production beyond the quick stuff.</span><span class="tool-tap">Tap for detail</span></button>
+      <button class="tool-card"><span class="tool-name">WordPress</span><span class="tool-use">CMS builds and getting on-page SEO fixes actually implemented.</span><span class="tool-tap">Tap for detail</span></button>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" id="timeline" aria-label="Timeline">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How I got here</p>
+      <h2>The route, not just the CV version</h2>
+    </div>
+
+    <div class="tl-list">
+      <div class="tl-item">
+        <span class="tl-date">2018 — present</span>
+        <div><p class="tl-title">Freelance, on the side of everything</p><p class="tl-desc">Started taking on SEO and content clients before I had a job title for it.</p></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">2019 — 2022</span>
+        <div><p class="tl-title">BAMMC, Wilson College, Mumbai</p><p class="tl-desc">Bachelor of Mass Media &amp; Communication. CGPA 9.54/10.</p></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">Oct 2020 — Jan 2021</span>
+        <div><p class="tl-title">Digital Marketing Executive, Famous Fashion</p><p class="tl-desc">First real role. First real lessons about testing instead of guessing.</p></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">Sep 2022 — Jan 2023</span>
+        <div><p class="tl-title">Social Media &amp; Content Executive, Ethinos</p><p class="tl-desc">Where the audience research habit started.</p></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">Jan 2023 — Jul 2024</span>
+        <div><p class="tl-title">SEO &amp; Growth Analyst, Ethinos</p><p class="tl-desc">Moved from content into the technical side, across seven client accounts.</p></div>
+      </div>
+      <div class="tl-item">
+        <span class="tl-date">Sep 2024 — Sep 2025</span>
+        <div><p class="tl-title">MSc Digital Marketing, Liverpool John Moores University</p><p class="tl-desc">Moved to Liverpool. Ran the Maggie's Cancer Charity live campaign as part of the course.</p></div>
+      </div>
+      <div class="tl-item now">
+        <span class="tl-date">Now</span>
+        <div><p class="tl-title">Working full-time in the UK, still applying</p><p class="tl-desc">Currently in full-time UK employment while actively looking for the next SEO or organic growth role — this site is part of that search.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="lab" id="lab" aria-label="The lab">
+  <div class="wrap">
+    <div class="lab-intro section-head" style="margin-bottom:0;">
+      <p class="eyebrow">The lab</p>
+      <h2>Not everything has to become a client project</h2>
+      <p>Some things I build just to see if I can.</p>
+    </div>
+    <div class="lab-card">
+      <span class="k">Personal project</span>
+      <h3>A browser game, built from scratch</h3>
+      <p>A narrative sci-fi arena shooter running entirely on HTML5 canvas — no engine, no framework. Not marketing work. Just proof I can build something interactive end to end when I want to.</p>
+    </div>
+  </div>
+</section>
+
+<section class="thoughts" aria-label="Writing">
+  <div class="wrap">
+    <div class="thoughts-box">
+      <p class="eyebrow" style="margin-bottom:14px;">Things I think about</p>
+      <h3>Nothing published yet.</h3>
+      <p>SEO, content, algorithms, why most "growth hacks" aren't — I've got opinions. This is where they'll go once there's enough to be worth reading. Check back.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-label="Contact">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;">Got an idea?</p>
+    <h2>Let's make it<br>interesting.</h2>
+    <p class="sub">joeljulie123@gmail.com</p>
+    <div class="contact-links">
+      <a class="btn" href="mailto:joeljulie123@gmail.com">Email me</a>
+      <a class="btn ghost" href="https://linkedin.com/in/joel-jacob-55072b171" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="Joel-Jacob-CV.pdf" target="_blank" rel="noopener">View CV</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>Joel Jacob — Liverpool, UK</span>
+  <span id="year"></span>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* NAV scroll state */
+  var nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive:true });
+
+  /* Mobile menu */
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = document.getElementById('mobileClose');
+  function closeMenu(){ mobileMenu.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); }
+  navToggle.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileClose.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
+
+  /* Generic accordion toggle helper */
+  function wireAccordion(btnSelector, panelClass){
+    document.querySelectorAll(btnSelector).forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        var panel = btn.nextElementSibling;
+        if(!expanded){
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        } else {
+          panel.style.maxHeight = 0;
+        }
+      });
+    });
+  }
+  wireAccordion('.audit-btn');
+  wireAccordion('.check-btn');
+
+  /* Tool cards */
+  document.querySelectorAll('.tool-card').forEach(function(card){
+    card.addEventListener('click', function(){ card.classList.toggle('open'); });
+  });
+
+  /* Count-up stats on scroll into view */
+  var counters = document.querySelectorAll('[data-count]');
+  var counterObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        animateCount(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(function(el){ counterObserver.observe(el); });
+
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var prefix = el.getAttribute('data-prefix') || '';
+    var suffix = el.getAttribute('data-suffix') || '';
+    var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    if(reduceMotion){
+      el.textContent = prefix + target.toFixed(decimals) + suffix;
+      return;
+    }
+    var duration = 1200;
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var val = target * eased;
+      el.textContent = prefix + (decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString('en-GB')) + suffix;
+      if(progress < 1){ requestAnimationFrame(step); }
+      else { el.textContent = prefix + (decimals ? target.toFixed(decimals) : target.toLocaleString('en-GB')) + suffix; }
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* Hero load-in — the one orchestrated motion moment */
+  window.addEventListener('DOMContentLoaded', function(){
+    if(reduceMotion) return;
+    var eyebrow = document.getElementById('heroEyebrow');
+    var headline = document.getElementById('heroHeadline');
+    [eyebrow, headline].forEach(function(el, i){
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(14px)';
+      el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+      setTimeout(function(){
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }, 120 + i * 160);
+    });
+  });
+
+  /* Hero 3D — a quiet, slightly imperfect object. Falls back to the CSS gradient blob alone. */
+  (function initHero3D(){
+    var canvas = document.getElementById('hero-canvas');
+    if(!canvas) return;
+    if(window.innerWidth < 760) return; // keep mobile light, per brief
+    if(!window.WebGLRenderingContext) return;
+
+    var script = document.createElement('script');
+    script.type = 'module';
+    script.textContent = [
+      "import * as THREE from 'https://unpkg.com/three@0.160.0/build/three.module.js';",
+      "try {",
+      "  var canvas = document.getElementById('hero-canvas');",
+      "  var wrap = canvas.parentElement;",
+      "  var w = wrap.clientWidth, h = wrap.clientHeight;",
+      "  var scene = new THREE.Scene();",
+      "  var camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 100);",
+      "  camera.position.set(0, 0, 6.4);",
+      "  var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });",
+      "  renderer.setSize(w, h);",
+      "  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));",
+      "  var geo = new THREE.IcosahedronGeometry(2, 1);",
+      "  var pos = geo.attributes.position;",
+      "  for(var i = 0; i < pos.count; i++){",
+      "    var x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);",
+      "    var n = 1 + 0.06 * Math.sin(x*3.1 + y*1.7) * Math.cos(z*2.3);",
+      "    pos.setXYZ(i, x*n, y*n, z*n);",
+      "  }",
+      "  geo.computeVertexNormals();",
+      "  var mat = new THREE.MeshStandardMaterial({ color: 0xEDE7D6, roughness: 0.55, metalness: 0.08, flatShading: true });",
+      "  var mesh = new THREE.Mesh(geo, mat);",
+      "  scene.add(mesh);",
+      "  var wireGeo = new THREE.IcosahedronGeometry(2.02, 1);",
+      "  var wireMat = new THREE.MeshBasicMaterial({ color: 0x2C6B5A, wireframe: true, transparent: true, opacity: 0.25 });",
+      "  scene.add(new THREE.Mesh(wireGeo, wireMat));",
+      "  scene.add(new THREE.AmbientLight(0xffffff, 0.7));",
+      "  var key = new THREE.DirectionalLight(0xD9932F, 1.1);",
+      "  key.position.set(3, 4, 5);",
+      "  scene.add(key);",
+      "  var rim = new THREE.DirectionalLight(0x4C5AC4, 0.6);",
+      "  rim.position.set(-4, -2, -3);",
+      "  scene.add(rim);",
+      "  var mouseX = 0, mouseY = 0;",
+      "  wrap.addEventListener('mousemove', function(e){",
+      "    var r = wrap.getBoundingClientRect();",
+      "    mouseX = ((e.clientX - r.left) / r.width - 0.5);",
+      "    mouseY = ((e.clientY - r.top) / r.height - 0.5);",
+      "  });",
+      "  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;",
+      "  function animate(){",
+      "    requestAnimationFrame(animate);",
+      "    if(!reduceMotion){ mesh.rotation.y += 0.0032; mesh.rotation.x += 0.0011; }",
+      "    mesh.rotation.y += (mouseX * 0.4 - mesh.rotation.y) * 0.0;",
+      "    mesh.position.x += (mouseX*0.3 - mesh.position.x) * 0.04;",
+      "    mesh.position.y += (-mouseY*0.3 - mesh.position.y) * 0.04;",
+      "    scene.children[1].rotation.copy(mesh.rotation);",
+      "    scene.children[1].position.copy(mesh.position);",
+      "    renderer.render(scene, camera);",
+      "  }",
+      "  animate();",
+      "  window.addEventListener('resize', function(){",
+      "    var w2 = wrap.clientWidth, h2 = wrap.clientHeight;",
+      "    camera.aspect = w2/h2; camera.updateProjectionMatrix();",
+      "    renderer.setSize(w2, h2);",
+      "  });",
+      "} catch(e) { /* silent fallback to CSS gradient blob */ }"
+    ].join('\n');
+    document.body.appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
